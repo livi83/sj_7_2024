@@ -2,34 +2,12 @@
 include_once('partials/header.php');
 ?>    
     <main>
-      <section class="slides-container">
+      
         <?php
           $headings = array('Prvý nadpis','Druhý nadpis');
           $img_folder = 'img/carousel/';
-          $img_files = glob($img_folder . '*.jpg');
-
-          for($i = 0; $i < count($img_files); $i++){
-            echo('<div class="slide fade">');
-            echo('<img src="'.$img_files[$i].'">');
-            echo('<div class="slide-text">');
-            //sem pojde podmienka
-            if(count($headings) == count($img_files)){
-              //vypíšem i-ty nadpis
-              echo($headings[$i]);
-            }else{
-                if($i<count($headings)){
-                  echo($headings[$i]);
-                }//inak nevypíšem nič
-            }
-            echo('</div>');
-            echo('</div>');
-          }    
+          get_slides($headings,$img_folder);
         ?>
-
-        <a id="prev" class="prev">❮</a>
-        <a id="next" class="next">❯</a>
-        
-      </section>
       <section class="container">
         <div class="row">
           <div class="col-100 text-center">
