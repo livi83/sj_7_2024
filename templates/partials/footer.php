@@ -14,12 +14,12 @@
       <div class="col-25">
         <h4>Rýchle odkazy</h4>
         <?php
-            $pages = array('Domov'=>'index.php',
-            'Q&A'=>'qna.php',
-            'Kontakt'=>'kontakt.php'  
-            );
-
-            echo(get_menu($pages));  
+           $pages = array('Domov'=>'home.php',
+           'Portfólio'=>'portfolio.php',
+           'Q&A'=>'qna.php',
+           'Kontakt'=>'kontakt.php'  
+           );
+           echo(generate_menu($pages));
         ?>
       </div>
       <div class="col-25">
@@ -31,15 +31,8 @@
       Created and designed by Lívia
     </div>
   </footer>
-     <!--
-          VYTVORIT FUNKCIU add_scripts()
-          menu.js - na kazdu stranku
-          slider.js - na index
-          accordion.js - na qna
-    -->
     <?php
       add_scripts();
     ?>
-    
 </body>
 </html>

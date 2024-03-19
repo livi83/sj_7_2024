@@ -2,15 +2,12 @@
 include('partials/header.php');
 ?> 
         <main>
-            <section class="banner">
-                <div class="container text-white">
-                    <h1>Portfólio</h1>
-                </div>
-            </section>
+             <?php include('partials/banner.php');?>
               <section class="container">
                 <?php
                     generate_portfolio(2,4);
                 ?>
+               
             </section>   
 
         </main>

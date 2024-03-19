@@ -2,11 +2,7 @@
 include('partials/header.php');
 ?> 
 <main>
-    <section class="banner">
-      <div class="container text-white">
-        <h1>Q&A</h1>
-      </div>
-    </section>
+    <?php include('partials/banner.php');?>
     <section class="container">
       <div class="row">
         <div class="col-100 text-center">
@@ -20,11 +16,10 @@ include('partials/header.php');
                        'Otázka 2' => 'Odpoveď 2',
                        'Otázka 3' => 'Odpoveď 3',
                        'Otázka 4' => 'Odpoveď 4',
-          );
-          generate_qna($qna);   
+                      );
+          generate_qna($qna);
         ?>
-      
-    </section>
+      </section>
     </section>
   </div>
   </main>
