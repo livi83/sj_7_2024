@@ -177,20 +177,18 @@ function redirect_homepage(){
     die("Nepodarilo sa nájsť Domovskú stránku");
 }
 
-function db_connect(){
-    function db_connection(){
-        try {
-            //$pdo = new PDO('mysql:host=localhost;dbname=vaša_databáza', 'vaše_používateľské_meno', 'vaše_heslo');
-            $connection = new PDO("mysql:host=" . DATABASE['HOST'] . ";dbname=" . DATABASE['DBNAME'] . ";charset=utf8", 
-                                  DATABASE['USER_NAME'], 
-                                  DATABASE['PASSWORD']);
-            $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
-            return $connection;
-            
-        }catch(PDOException $e){
-            die("Chyba pripojenia k databáze: " . $e->getMessage());
-        }
+function db_connection(){
+    try {
+        //$pdo = new PDO('mysql:host=localhost;dbname=vaša_databáza', 'vaše_používateľské_meno', 'vaše_heslo');
+        $connection = new PDO("mysql:host=" . DATABASE['HOST'] . ";dbname=" . DATABASE['DBNAME'] . ";charset=utf8", 
+                              DATABASE['USER_NAME'], 
+                              DATABASE['PASSWORD']);
+        $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+        return $connection;
+        
+    }catch(PDOException $e){
+        die("Chyba pripojenia k databáze: " . $e->getMessage());
     }
-    
 }
+
 ?>
