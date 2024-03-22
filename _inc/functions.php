@@ -1,5 +1,6 @@
 
 <?php
+require('config.php');
 /**
  * Generuje odkazy na CSS súbory pre hlavičku stránky
  *
@@ -176,5 +177,16 @@ function redirect_homepage(){
     die("Nepodarilo sa nájsť Domovskú stránku");
 }
 
-
+function db_connect(){
+    function db_connection(){
+        try {
+          
+            
+        }catch(PDOException $e){
+            return 0;
+            die("Chyba pripojenia k databáze: " . $e->getMessage());
+        }
+    }
+    
+}
 ?>
