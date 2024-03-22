@@ -180,10 +180,14 @@ function redirect_homepage(){
 function db_connect(){
     function db_connection(){
         try {
-          
+            //$pdo = new PDO('mysql:host=localhost;dbname=vaša_databáza', 'vaše_používateľské_meno', 'vaše_heslo');
+            $connection = new PDO("mysql:host=" . DATABASE['HOST'] . ";dbname=" . DATABASE['DBNAME'] . ";charset=utf8", 
+                                  DATABASE['USER_NAME'], 
+                                  DATABASE['PASSWORD']);
+            $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+            return $connection;
             
         }catch(PDOException $e){
-            return 0;
             die("Chyba pripojenia k databáze: " . $e->getMessage());
         }
     }
