@@ -8,7 +8,9 @@ include('partials/header.php');
           <div class="col-100 text-center">
               <h2>Ďakujeme za vyplnenie formulára</h2>
                <?php
-                  print_r($_POST);
+                  //print_r($_POST);
+                  //$conn = db_connection();
+                  
                ?>
           </div>
         </div>
