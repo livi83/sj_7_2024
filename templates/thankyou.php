@@ -10,7 +10,8 @@ include('partials/header.php');
                <?php
                   //print_r($_POST);
                   //$conn = db_connection();
-                  
+                  $contact_object = new Contact();
+                  $contact_object->insert();
                ?>
           </div>
         </div>
