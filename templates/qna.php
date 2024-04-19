@@ -22,8 +22,8 @@ include('partials/header.php');
           $qna = $qna_object->select();
           for ($i=0;$i<count($qna);$i++){
             echo '<div class="accordion">';
-            echo '<div class="question">'.$qna[$i]['question'].'</div>';
-            echo '<div class="answer">'.$qna[$i]['answer'].'</div>';
+            echo '<div class="question">'.$qna[$i]->question.'</div>';
+            echo '<div class="answer">'.$qna[$i]->answer.'</div>';
             echo '</div>';
           }
 
