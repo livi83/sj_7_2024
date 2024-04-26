@@ -39,6 +39,7 @@
                 //echo 'Nemáme spojenie s databázou';
               }
         }
+        
 
     }
 

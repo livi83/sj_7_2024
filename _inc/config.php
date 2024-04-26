@@ -15,4 +15,6 @@ require_once('classes/Contact.php');
 require_once('classes/Qna.php');
 require_once('classes/Portfolio.php');
 require_once('classes/User.php');
+
+session_start();
 ?>
