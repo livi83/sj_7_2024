@@ -49,6 +49,19 @@
                 echo $e->getMessage();
             }
         }
+
+        public function delete(){
+            try{
+                $data = array(
+                    'contact_id' => $_POST['delete_contact']
+                );
+                $query = "DELETE FROM contact WHERE id = :contact_id";
+                $query_run = $this->db->prepare($query);
+                $query_run->execute($data);
+            }catch(PDOException $e){
+                echo $e->getMessage();
+            }
+        }
         
 
     }
