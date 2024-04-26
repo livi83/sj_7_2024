@@ -22,7 +22,7 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
                     if(isset($_POST['user_login'])){
                         $email = $_POST['email'];
                         $password = $_POST['password']; 
-                        print_r($_POST);
+                       
                         $user_object = new User();
 
                         $login_success = $user_object->login($email,$password);
