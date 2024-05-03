@@ -1,6 +1,29 @@
 <?php
     include('partials/header.php');
+    // Vytvorenie objektu triedy User
+    $user_object = new User();
 
+    // Spracovanie údajov z formulára po odoslaní
+    if(isset($_POST['user_register'])){
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $confirm_password = $_POST['confirm_password'];
+
+        // Kontrola, či sa zadané heslá zhodujú
+        if($password === $confirm_password) {
+            // Volanie metódy register() na vytvorenie používateľa
+            if($user_object->register($email, $password)) {
+                // Registrácia bola úspešná
+                echo "<p>Registrácia úspešná</p>";
+            } else {
+                // Registrácia zlyhala
+                echo "<p>Registrácia zlyhala</p>";
+            }
+        } else {
+            // Heslá sa nezhodujú
+            echo "<p>Heslá sa nezhodujú</p>";
+        }
+    }
 ?> 
 <main>
       <section class="container">
